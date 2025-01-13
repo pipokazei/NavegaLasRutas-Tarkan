@@ -1,0 +1,27 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 10px;
+  background-color: #dacaec;
+  width: 100%;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+  font-family: "Spicy Rice", serif;
+}
+
+.navbar-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.navbar-list li {
+  list-style: none;
+}

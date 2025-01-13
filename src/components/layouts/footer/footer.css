@@ -1,0 +1,17 @@
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  padding: 10px;
+  background-color: #dacaec;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

@@ -1,0 +1,98 @@
+.main-container {
+  margin-top: 60px;
+}
+
+.carousel {
+  position: relative;
+}
+.carousel .carousel-item {
+  position: relative;
+}
+.carousel .carousel-item .carousel-image {
+  height: 50vh;
+  object-fit: cover;
+}
+
+.nav-link {
+  font-size: 18px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.highlighted-products {
+  padding: 20px 20px 50px 20px;
+  background-color: #e5dbf0;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+}
+.product-grid .product-card {
+  text-align: center;
+  width: 300px;
+}
+.product-grid .product-card .product-image {
+  background-color: #f1f2ff;
+  border: 1px solid #5b2e48;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.product-grid .product-card .product-image img {
+  height: 250px;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+.product-grid .product-card p {
+  padding: 10px 0;
+}
+.product-grid .product-card button {
+  background-color: #8e44ad;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.brand-explanation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  flex-direction: column;
+}
+.brand-explanation p {
+  width: 50%;
+  text-align: center;
+}
+.brand-explanation .highlight {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.brand-explanation .description-text {
+  font-family: "Spicy Rice", serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: black;
+  padding: 10px;
+  margin: 0;
+}
+
+.card-container {
+  padding-top: 20px;
+  justify-content: center;
+}
+
+.products-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.products-button {
+  color: #562ca8 !important;
+}

@@ -6,6 +6,9 @@
   padding: 10px;
   background-color: #dacaec;
   width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2000;
 }
 
 .logo {
@@ -16,6 +19,11 @@
   font-family: "Spicy Rice", serif;
 }
 
+.navbar-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .navbar-list {
   display: flex;
   justify-content: space-between;
@@ -24,4 +32,14 @@
 
 .navbar-list li {
   list-style: none;
+}
+
+.navbar-logo {
+  text-decoration: none;
+  color: inherit;
+}
+
+.cart-icon {
+  margin-right: 10px;
+  margin-top: 5px;
 }

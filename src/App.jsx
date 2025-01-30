@@ -1,14 +1,27 @@
 import { Footer } from "./components/layouts/footer/Footer";
 import { Navbar } from "./components/layouts/navbar/Navbar";
-import { ItemListContainer } from "./components/pages/itemListContainer/itemListContainer";
+import { ItemListContainer } from "./components/pages/itemListContainer/ItemListContainer";
+import { ItemDetail } from "./components/pages/itemDetail/ItemDetail";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Cart } from "./components/pages/cart/Cart";
+import { Checkout } from "./components/pages/checkout/Checkout";
+import { Home } from "./components/pages/home/Home";
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <Navbar />
-      <ItemListContainer text="Aca va Hero Section y algunos productos" />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<ItemListContainer />} />
+        <Route path="/products/:name" element={<ItemListContainer />} />
+        <Route path="/product/:id" element={<ItemDetail />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<h1>404 Not Found</h1>} />
+      </Routes>
       <Footer />
-    </div>
+    </BrowserRouter>
   );
 }
 

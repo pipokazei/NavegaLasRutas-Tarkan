@@ -1,0 +1,58 @@
+.item-detail-container {
+  margin: 80px 40px 30px 40px;
+  /* display: flex;
+    justify-content: center; */
+}
+
+.item-detail-image {
+  width: 400px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+  border-radius: 5%;
+}
+.title-text {
+  color: #562ca8;
+}
+.price-text {
+  color: #562ca8;
+  font-size: 25px;
+  padding-top: 20px;
+}
+
+.counter-input .MuiOutlinedInput-root {
+  border-radius: 0;
+}
+
+.counter-input .MuiOutlinedInput-input {
+  text-align: center;
+  width: 60px;
+  color: #562ca8;
+}
+
+.counter-button {
+  color: #562ca8;
+}
+
+.button-group {
+  padding-top: 10px;
+}
+
+.description-text {
+  font-size: 18px;
+  padding-top: 20px;
+}
+
+.buttons-box {
+  display: flex;
+  justify-items: center;
+  justify-content: space-between;
+}
+
+.cart-button {
+  background-color: #562ca8 !important;
+  width: 180px !important; /* Set width */
+  height: 40px !important;
+  margin-top: 10px !important;
+}

@@ -1,0 +1,44 @@
+.item-card-container {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+}
+
+.item-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.item-card-action-area {
+  flex: 1 1 auto;
+}
+
+.item-card-media {
+  height: 170px;
+}
+
+.item-card-content {
+  height: 130px;
+}
+
+.item-card-title {
+  font-weight: bold;
+}
+
+.item-card-description {
+  color: #757575;
+}
+
+.item-card-price {
+  color: #757575;
+}
+
+.item-card-actions {
+  margin-top: auto;
+  justify-content: center;
+}
+
+.products-button {
+  color: #562ca8 !important;
+}

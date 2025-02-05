@@ -9,8 +9,16 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./itemCard.css";
+import { useContext } from "react";
+import { CartContext } from "../../../context/CartContext";
 
 export const ItemCard = ({ item }) => {
+  const { addToCart } = useContext(CartContext);
+
+  const onAdd = () => {
+    let cartItem = { ...item, quantity: 1 };
+    addToCart(cartItem);
+  };
   return (
     <Card className="item-card-container">
       <Link to={`/product/${item.id}`} className="item-link">
@@ -40,7 +48,7 @@ export const ItemCard = ({ item }) => {
         </CardActionArea>
       </Link>
       <CardActions className="item-card-actions">
-        <Button size="small" className="products-button">
+        <Button size="small" className="products-button" onClick={onAdd}>
           Agregar al carrito
         </Button>
       </CardActions>

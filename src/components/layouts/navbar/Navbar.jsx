@@ -1,6 +1,5 @@
-import { Badge } from "@mui/material";
 import { CartWidget } from "../../common/cartWidget/CartWidget";
-import "./navbar.css"; // Import the CSS file
+import "./navbar.css";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
@@ -20,9 +19,7 @@ export const Navbar = () => {
           Contacto
         </Link>
       </ul>
-      <Badge badgeContent={4} color="primary" className="cart-icon">
-        <CartWidget />
-      </Badge>
+      <CartWidget />
     </nav>
   );
 };

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { products } from "../../../products";
 import "./itemDetail.css";
@@ -12,11 +12,13 @@ import {
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { CartContext } from "../../../context/CartContext";
 
 export const ItemDetail = () => {
   const { id } = useParams();
   const [item, setItem] = useState({});
   const [count, setCount] = useState(1);
+  const { addToCart } = useContext(CartContext);
 
   const handleChange = (event) => {
     setCount(Math.max(Number(event.target.value), 1));
@@ -27,6 +29,11 @@ export const ItemDetail = () => {
 
     setItem(itemSelected);
   }, [id]);
+
+  const onAdd = () => {
+    let cartItem = { ...item, quantity: count };
+    addToCart(cartItem);
+  };
 
   return (
     <div className="item-detail-container">
@@ -60,11 +67,19 @@ export const ItemDetail = () => {
                 value={count}
                 className="counter-input"
               />
-              <Button onClick={() => setCount((prev) => prev + 1)}>
+              <Button
+                onClick={() => setCount((prev) => prev + 1)}
+                disabled={count === item?.stock}
+              >
                 <AddIcon fontSize="small" className="counter-button" />
               </Button>
             </ButtonGroup>
-            <Button variant="contained" size="small" className="cart-button">
+            <Button
+              variant="contained"
+              size="small"
+              className="cart-button"
+              onClick={onAdd}
+            >
               Agregar al carrito
             </Button>
           </Box>

@@ -6,20 +6,23 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Cart } from "./components/pages/cart/Cart";
 import { Checkout } from "./components/pages/checkout/Checkout";
 import { Home } from "./components/pages/home/Home";
+import { CartContextProvider } from "./context/CartContext";
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<ItemListContainer />} />
-        <Route path="/products/:name" element={<ItemListContainer />} />
-        <Route path="/product/:id" element={<ItemDetail />} />
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="*" element={<h1>404 Not Found</h1>} />
-      </Routes>
+      <CartContextProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<ItemListContainer />} />
+          <Route path="/products/:name" element={<ItemListContainer />} />
+          <Route path="/product/:id" element={<ItemDetail />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="*" element={<h1>404 Not Found</h1>} />
+        </Routes>
+      </CartContextProvider>
       <Footer />
     </BrowserRouter>
   );

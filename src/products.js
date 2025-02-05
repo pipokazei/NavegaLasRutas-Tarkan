@@ -6,7 +6,7 @@ export let products = [
     description: "estas son las mejores",
     imageUrl:
       "https://res.cloudinary.com/dhoz7uto3/image/upload/v1738096277/peshtemal_sam3ku.jpg",
-    stock: 12,
+    stock: 5,
     category: "Hogar",
   },
   {
@@ -26,7 +26,7 @@ export let products = [
     description: "estas son las mejores",
     imageUrl:
       "https://res.cloudinary.com/dhoz7uto3/image/upload/v1738096277/cay-bardagi_chafkn.jpg",
-    stock: 12,
+    stock: 10,
     category: "Hogar",
   },
   {
@@ -36,7 +36,7 @@ export let products = [
     description: "estas son las mejores",
     imageUrl:
       "https://res.cloudinary.com/dhoz7uto3/image/upload/v1738096279/nazar_o2mzye.jpg",
-    stock: 12,
+    stock: 8,
     category: "Decoración",
   },
   {
@@ -46,7 +46,7 @@ export let products = [
     description: "estas son las mejores",
     imageUrl:
       "https://res.cloudinary.com/dhoz7uto3/image/upload/v1738096278/bowls_hipafr.jpg",
-    stock: 12,
+    stock: 11,
     category: "Decoración",
   },
   {
@@ -56,7 +56,7 @@ export let products = [
     description: "estas son las mejores",
     imageUrl:
       "https://res.cloudinary.com/dhoz7uto3/image/upload/v1738096443/hediyelik-rize-cayi-500gr-hediyelik-urunler-caykur-hediyelik-caylar-caykur-hediyelik-caylar-222-10-O_ypq22n.jpg",
-    stock: 12,
+    stock: 20,
     category: "AlimentosBebidas",
   },
   {
@@ -66,7 +66,7 @@ export let products = [
     description: "estas son las mejores",
     imageUrl:
       "https://res.cloudinary.com/dhoz7uto3/image/upload/v1738096530/turk-kahvesi_zvtyj5.jpg",
-    stock: 12,
+    stock: 22,
     category: "AlimentosBebidas",
   },
 ];

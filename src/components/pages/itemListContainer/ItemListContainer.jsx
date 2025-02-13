@@ -1,46 +1,48 @@
 import "./itemListContainer.css";
-import { products } from "../../../products";
 import { useEffect, useState } from "react";
 import { ItemCard } from "../../common/itemCard/ItemCard";
 import { Grid2 } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { ItemListSelect } from "../../common/itemListSelect/ItemListSelect";
+import { db } from "../../../firebaseConfig";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 export const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   const { name } = useParams();
 
   useEffect(() => {
-    let filteredProducts;
+    let productsCollection = collection(db, "products");
+    let consult = productsCollection;
 
     if (name) {
-      filteredProducts = products.filter(
-        (product) => product.category === name
+      let filteredCollection = query(
+        productsCollection,
+        where("category", "==", name)
       );
+      consult = filteredCollection;
     }
 
-    const getProducts = new Promise((resolve, reject) => {
-      const isLogged = true;
-      if (isLogged) {
-        resolve(!name ? products : filteredProducts);
-      } else {
-        reject({ statusCode: 400, message: "Algo salió mal" });
-      }
-    });
-
+    const getProducts = getDocs(consult);
     getProducts
-      .then((response) => {
-        setItems(response);
+      .then((res) => {
+        const products = res.docs.map((product) => {
+          return { id: product.id, ...product.data() };
+        });
+        setItems(products);
       })
-      .catch((error) => {
-        console.log(error);
-      })
-      .finally(() => {});
+      .catch((error) => console.log(error));
   }, [name]);
+
+  // const agregarProductos = () => {
+  //   let productsCollection = collection(db, "products");
+  //   products.forEach((element) => addDoc(productsCollection, element));
+  // };
 
   return (
     <>
       <div className="item-list">
+        {/* <button onClick={agregarProductos}>agregar productos</button> */}
         <div className="select-container">
           <ItemListSelect />
         </div>
@@ -50,8 +52,8 @@ export const ItemListContainer = () => {
           justifyContent="center"
           alignItems="center"
         >
-          {items.map((item) => (
-            <Grid2 xs={12} sm={6} md={4} key={item.id}>
+          {items.map((item, index) => (
+            <Grid2 xs={12} sm={6} md={4} key={index}>
               <ItemCard item={item} />
             </Grid2>
           ))}

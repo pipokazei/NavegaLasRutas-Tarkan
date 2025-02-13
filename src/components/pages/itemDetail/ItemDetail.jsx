@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { products } from "../../../products";
 import "./itemDetail.css";
 import {
   Box,
@@ -13,6 +12,8 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { CartContext } from "../../../context/CartContext";
+import { db } from "../../../firebaseConfig";
+import { collection, doc, getDoc } from "firebase/firestore";
 
 export const ItemDetail = () => {
   const { id } = useParams();
@@ -25,9 +26,12 @@ export const ItemDetail = () => {
   };
 
   useEffect(() => {
-    let itemSelected = products.find((product) => product.id === id);
-
-    setItem(itemSelected);
+    let productsCollection = collection(db, "products");
+    let productRef = doc(productsCollection, id);
+    const getProduct = getDoc(productRef);
+    getProduct
+      .then((res) => setItem({ id: res.id, ...res.data() }))
+      .catch((error) => console.log(error));
   }, [id]);
 
   const onAdd = () => {

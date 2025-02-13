@@ -14,11 +14,12 @@ import { CartContext } from "../../../context/CartContext";
 
 export const ItemCard = ({ item }) => {
   const { addToCart } = useContext(CartContext);
-
+  console.log(item);
   const onAdd = () => {
     let cartItem = { ...item, quantity: 1 };
     addToCart(cartItem);
   };
+
   return (
     <Card className="item-card-container">
       <Link to={`/product/${item.id}`} className="item-link">

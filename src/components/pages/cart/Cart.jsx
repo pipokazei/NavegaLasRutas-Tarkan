@@ -15,24 +15,26 @@ export const Cart = () => {
       {cart?.map((item, index) => (
         <CartItemCard item={item} key={index} />
       ))}
-      {cart.length > 0 ? (
-        <Box className="summary-container">
-          <h2>Resumen de compra</h2>
-          <h3>Total : {total}</h3>
-          <Button
-            onClick={() => navigate("/checkout")}
-            className="final-button"
-            variant="contained"
-          >
-            Finalizar compra
-          </Button>
-        </Box>
-      ) : (
-        <>
-          <h3>Tu carrito está vacio</h3>
-          <Link to="/products"> Empeza a comprar </Link>
-        </>
-      )}
+      <Box className="summary-container">
+        {cart.length > 0 ? (
+          <>
+            <h2>Resumen de compra</h2>
+            <h3>Total : {total}</h3>
+            <Button
+              onClick={() => navigate("/checkout")}
+              className="final-button"
+              variant="contained"
+            >
+              Finalizar compra
+            </Button>
+          </>
+        ) : (
+          <>
+            <h3>Tu carrito está vacio</h3>
+            <Link to="/products"> Empeza a comprar </Link>
+          </>
+        )}
+      </Box>
     </div>
   );
 };

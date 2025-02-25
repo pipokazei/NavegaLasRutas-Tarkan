@@ -6,7 +6,7 @@
 
 Puedes probar la aplicación en el siguiente enlace:
 
-<!-- 🔗 [Tienda Turca](https://tu-enlace-vercel.vercel.app/) -->
+🔗 [Tienda Turca](https://tienda-turca.vercel.app/)
 
 ## Tecnologías utilizadas
 

@@ -1,0 +1,29 @@
+.checkout-container {
+  padding: 20px 10px;
+  margin: 50px 0px 50px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  background-color: #562ca8 !important;
+  width: 180px !important;
+  height: 40px !important;
+  margin-top: 10px !important;
+}
+
+.text-field {
+  width: 100%;
+}
+.total-text {
+  margin: 20px;
+}

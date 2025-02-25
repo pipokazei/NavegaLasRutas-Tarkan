@@ -2,3 +2,17 @@
   margin-top: 70px;
   margin-bottom: 50px;
 }
+.summary-container {
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.final-button {
+  background-color: #562ca8 !important;
+  width: 180px !important; /* Set width */
+  height: 40px !important;
+  margin-top: 10px !important;
+}

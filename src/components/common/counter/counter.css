@@ -1,0 +1,37 @@
+.button-group {
+  padding-top: 10px;
+}
+
+.counter-button {
+  color: #562ca8;
+}
+
+.counter-input .MuiOutlinedInput-root {
+  border-radius: 0;
+}
+
+.counter-input .MuiOutlinedInput-input {
+  text-align: center;
+  width: 60px;
+  color: #562ca8;
+}
+
+.button-group.small {
+  padding-top: 2px;
+}
+
+.counter-button.small {
+  width: 15px;
+  height: 20px;
+}
+
+.counter-input .small .MuiOutlinedInput-root {
+  border-radius: 0;
+  height: 10px;
+}
+
+.counter-input .small .MuiOutlinedInput-input {
+  font-size: 10px;
+  color: #562ca8;
+  text-align: center;
+}

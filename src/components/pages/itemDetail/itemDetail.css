@@ -1,10 +1,10 @@
-.item-detail-container {
+.item-container {
   margin: 80px 40px 30px 40px;
-  /* display: flex;
-    justify-content: center; */
+  display: flex;
+  justify-content: center;
 }
 
-.item-detail-image {
+.item-image {
   width: 400px;
   height: auto;
   object-fit: contain;
@@ -19,24 +19,6 @@
   color: #562ca8;
   font-size: 25px;
   padding-top: 20px;
-}
-
-.counter-input .MuiOutlinedInput-root {
-  border-radius: 0;
-}
-
-.counter-input .MuiOutlinedInput-input {
-  text-align: center;
-  width: 60px;
-  color: #562ca8;
-}
-
-.counter-button {
-  color: #562ca8;
-}
-
-.button-group {
-  padding-top: 10px;
 }
 
 .description-text {

@@ -1,33 +1,38 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
 import "./cart.css";
+import { Box, Button } from "@mui/material";
+import { CartItemCard } from "../../common/cartItemCard/CartItemCard";
 
 export const Cart = () => {
-  const { cart, removeCart, removeById, getTotalAmount } =
-    useContext(CartContext);
-
+  const { cart, getTotalAmount } = useContext(CartContext);
+  const navigate = useNavigate();
   let total = getTotalAmount();
 
   return (
     <div className="cart-container">
-      {cart.map((product) => {
-        return (
-          <div
-            key={product.id}
-            style={{ border: "2px solid black", padding: "20px" }}
+      {cart?.map((item, index) => (
+        <CartItemCard item={item} key={index} />
+      ))}
+      {cart.length > 0 ? (
+        <Box className="summary-container">
+          <h2>Resumen de compra</h2>
+          <h3>Total : {total}</h3>
+          <Button
+            onClick={() => navigate("/checkout")}
+            className="final-button"
+            variant="contained"
           >
-            <h2>{product.title}</h2>
-            <h2>{product.price}</h2>
-            <h2>{product.quantity}</h2>
-            <button onClick={() => removeById(product.id)}>Eliminar</button>
-          </div>
-        );
-      })}
-      <button onClick={removeCart}>Vaciar carrito</button>
-
-      <h2>El total a pagar es : {total}</h2>
-      <Link to="/checkout"> Finalizar compra </Link>
+            Finalizar compra
+          </Button>
+        </Box>
+      ) : (
+        <>
+          <h3>Tu carrito está vacio</h3>
+          <Link to="/products"> Empeza a comprar </Link>
+        </>
+      )}
     </div>
   );
 };

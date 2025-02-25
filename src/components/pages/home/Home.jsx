@@ -2,18 +2,30 @@ import { Button, Stack } from "@mui/material";
 import { HomeCarousel } from "../../common/carousel/HomeCarousel";
 import "./home.css";
 import { ItemCard } from "../../common/itemCard/ItemCard";
-import { products } from "../../../products";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { db } from "../../../firebaseConfig";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 export const Home = () => {
   const [favouriteItems, setFavouriteItems] = useState([]);
 
   useEffect(() => {
-    let favouriteItems = products.filter(
-      (item) => item.id === "1" || item.id === "4" || item.id === "5"
+    let productsCollection = collection(db, "products");
+    let favouriteItems = query(
+      productsCollection,
+      where("title", "in", ["Toalla Turca", "Tetera Turca", "Amuleto Turco"])
     );
-    setFavouriteItems(favouriteItems);
+
+    const getProducts = getDocs(favouriteItems);
+    getProducts
+      .then((res) => {
+        const products = res.docs.map((product) => {
+          return { id: product.id, ...product.data() };
+        });
+        setFavouriteItems(products);
+      })
+      .catch((error) => console.log(error));
   }, []);
 
   return (

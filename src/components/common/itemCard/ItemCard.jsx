@@ -14,7 +14,7 @@ import { CartContext } from "../../../context/CartContext";
 
 export const ItemCard = ({ item }) => {
   const { addToCart } = useContext(CartContext);
-  console.log(item);
+
   const onAdd = () => {
     let cartItem = { ...item, quantity: 1 };
     addToCart(cartItem);

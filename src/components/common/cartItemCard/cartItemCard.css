@@ -1,0 +1,26 @@
+.item-detail-container {
+  border: 1px solid #ab88ef;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  width: 50%;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-detail-image {
+  height: 150px;
+  width: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.text {
+  color: #562ca8;
+  font-size: 20px;
+  padding-top: 10px;
+}

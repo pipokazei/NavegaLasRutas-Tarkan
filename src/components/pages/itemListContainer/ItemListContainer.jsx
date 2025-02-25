@@ -1,7 +1,7 @@
 import "./itemListContainer.css";
 import { useEffect, useState } from "react";
 import { ItemCard } from "../../common/itemCard/ItemCard";
-import { Grid2 } from "@mui/material";
+import { CircularProgress, Grid2 } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { ItemListSelect } from "../../common/itemListSelect/ItemListSelect";
 import { db } from "../../../firebaseConfig";
@@ -46,18 +46,22 @@ export const ItemListContainer = () => {
         <div className="select-container">
           <ItemListSelect />
         </div>
-        <Grid2
-          container
-          spacing={2}
-          justifyContent="center"
-          alignItems="center"
-        >
-          {items.map((item, index) => (
-            <Grid2 xs={12} sm={6} md={4} key={index}>
-              <ItemCard item={item} />
-            </Grid2>
-          ))}
-        </Grid2>
+        {items.length === 0 ? (
+          <CircularProgress color="inherit" />
+        ) : (
+          <Grid2
+            container
+            spacing={2}
+            justifyContent="center"
+            alignItems="center"
+          >
+            {items.map((item, index) => (
+              <Grid2 xs={12} sm={6} md={4} key={index}>
+                <ItemCard item={item} />
+              </Grid2>
+            ))}
+          </Grid2>
+        )}
       </div>
     </>
   );
